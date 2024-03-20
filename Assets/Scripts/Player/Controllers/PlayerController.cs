@@ -22,8 +22,8 @@ namespace Player.Controllers
 
         private async UniTaskVoid LoadEnemySpawner()
         {
-            var _enemySpawnerView = AddressableLoader.InstantiateAsync<IEnemySpawnerView>("Spawner_Default");
-            enemySpawnerController = new EnemySpawnerController(enemySpawnerView);
+            enemySpawnerView = await AddressableLoader.InstantiateAsync<IEnemySpawnerView>("Spawner_Default", playerView.SpawnerAnchor);
+            enemySpawnerController = new EnemySpawnerController(enemySpawnerView, playerView);
         }
 
         private async UniTask StartMovementCycle()

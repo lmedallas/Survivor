@@ -11,6 +11,8 @@ namespace Enemy.Views
 
         public Transform Transform => transform;
 
+        public GameObject GameObject => gameObject;
+
         public bool FlipSprite { get => _SpriteRenderer.flipX; set => _SpriteRenderer.flipX = value; }
 
     }

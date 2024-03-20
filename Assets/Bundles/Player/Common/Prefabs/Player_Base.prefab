@@ -171,6 +171,7 @@ MonoBehaviour:
   _Animator: {fileID: 1473686570341720826}
   _SpriteRenderer: {fileID: 8043380274164153149}
   _PlayerInput: {fileID: 5828447621700390847}
+  _SpawnerAnchor: {fileID: 2788526509709246126}
   _MovementSpeed: 5
   _MoveBinding:
     m_PersistentCalls:

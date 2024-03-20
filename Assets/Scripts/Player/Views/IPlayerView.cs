@@ -10,7 +10,10 @@ namespace Player.Views
 
         Transform Transform { get; }
 
+        Transform SpawnerAnchor { get; }
+
         float MovementSpeed { get; }
+
         bool FlipSprite { get; set; }
 
         int MoveState { set; }

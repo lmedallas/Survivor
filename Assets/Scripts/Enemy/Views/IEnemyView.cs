@@ -6,6 +6,8 @@ namespace Enemy.Views
     {
         Transform Transform { get; }
 
+        GameObject GameObject { get; }
+
         float MovementSpeed { get; }
 
         bool FlipSprite { get; set; }

@@ -65,6 +65,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Spawner_Base
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01539d98639350042bcf2037098a7c1b
+    m_Address: Assets/Bundles/Enemies/Common/Zombie_Variation.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Zombie_Variation
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b7b659197fc73c14496964d14ce41916, type: 2}
   m_SchemaSet:
