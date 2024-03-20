@@ -1,28 +1,46 @@
 using Cysharp.Threading.Tasks;
+using Enemy.Controllers;
+using Enemy.Views;
 using Player.Views;
 using UnityEngine;
+using Utils.AddressableLoader;
 
 namespace Player.Controllers
 {
     public class PlayerController : IPlayerController
     {
         private IPlayerView playerView;
+        private IEnemySpawnerView enemySpawnerView;
+        private IEnemySpawnerController enemySpawnerController;
 
         public PlayerController(IPlayerView _playerView)
         {
             playerView = _playerView;
             StartMovementCycle().Forget();
+            LoadEnemySpawner().Forget();
+        }
+
+        private async UniTaskVoid LoadEnemySpawner()
+        {
+            var _enemySpawnerView = AddressableLoader.InstantiateAsync<IEnemySpawnerView>("Spawner_Default");
+            enemySpawnerController = new EnemySpawnerController(enemySpawnerView);
         }
 
         private async UniTask StartMovementCycle()
         {
             var transform = playerView.Transform;
             var movementSpeed = playerView.MovementSpeed;
+            int isMoving = 0;
 
             while (true)
             {
                 var direction = playerView.Direction;
                 var horizontal = direction.x;
+
+                if (direction != Vector2.zero) isMoving = 1;
+                else isMoving = 0;
+
+                playerView.Animator.SetInteger("Move", isMoving);
 
                 var flipX = playerView.FlipSprite;
                 flipX = !(horizontal > 0f) && (horizontal < 0f || flipX);

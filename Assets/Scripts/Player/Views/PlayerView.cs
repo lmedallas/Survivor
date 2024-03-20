@@ -15,6 +15,7 @@ namespace Player.Views
 
         public Vector2 Direction => _Direction;
         public Transform Transform => transform;
+        public Animator Animator => _Animator;
         public float MovementSpeed => _MovementSpeed;
         public bool FlipSprite { get => _SpriteRenderer.flipX; set => _SpriteRenderer.flipX = value; }
         public int MoveState { set => _MoveBinding.Value = value; }

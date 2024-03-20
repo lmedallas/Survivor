@@ -1,4 +1,6 @@
 using Cysharp.Threading.Tasks;
+using Enemy.Controllers;
+using Enemy.Views;
 using Maps.Views;
 using Player.Controllers;
 using Player.Views;
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
     {
         var mapView = await AddressableLoader.InstantiateAsync<IMapView>("Map_Default");
         var playerView = await AddressableLoader.InstantiateAsync<IPlayerView>("Player_Default");
+        var enemyView = await AddressableLoader.InstantiateAsync<IEnemyView>("Zombie_Default");
         IPlayerController playerController = new PlayerController(playerView);
+        IEnemyController enemyController = new EnemyController(enemyView, playerView);
     }
 }

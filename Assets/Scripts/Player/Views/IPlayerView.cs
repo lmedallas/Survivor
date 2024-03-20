@@ -6,6 +6,8 @@ namespace Player.Views
     {
         Vector2 Direction { get; }
 
+        Animator Animator { get; }
+
         Transform Transform { get; }
 
         float MovementSpeed { get; }
